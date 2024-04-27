@@ -30,13 +30,13 @@ MariaDB [dbpost_sib6]> SELECT * FROM view_pesanan_detail;
 +------------+------------+---------+--------------------+-------------+-------------------+--------------+------+------------+
 | id_pesanan | tanggal    | total   | nama_pelanggan     | kode_produk | nama_produk       | jenis_produk | qty  | harga_jual |
 +------------+------------+---------+--------------------+-------------+-------------------+--------------+------+------------+
-|          1 | 2015-11-04 | 9720000 | Agung Sedayu Group | TV01        | Televisi 21 inchs | elektroniks  |    1 |    5040000 |
-|          1 | 2015-11-04 | 9720000 | Agung Sedayu Group | K001        | Kulkas 2 pintu    | makanan      |    1 |    4680000 |
-|          2 | 2015-11-04 |   17500 | Sekar Mirah        | TK01        | Teh Kotak         | komputer     |    5 |       3500 |
-|          3 | 2015-11-04 |       0 | Gayatri Dwi        | TK01        | Teh Kotak         | komputer     |   10 |       3500 |
-|          3 | 2015-11-04 |       0 | Gayatri Dwi        | TV01        | Televisi 21 inchs | elektroniks  |    1 |    5040000 |
-|          5 | 2015-11-04 |       0 | Cassanndra         | TK01        | Teh Kotak         | komputer     |   10 |       3500 |
-|          6 | 2015-11-04 |       0 | Pandan Wangi       | TK01        | Teh Kotak         | komputer     |   20 |       3500 |
+|          1 | 2015-11-04 | 9720000 | Aluca Syaputra ha  | TV01        | lemari            | elektroniks  |    1 |    5040000 |
+|          1 | 2015-11-04 | 9720000 | Aluca syaputra ha  | K001        | Kulkas 4 pintu    | makanan      |    1 |    4680000 |
+|          2 | 2015-11-04 |   17500 | fitri Mirah        | TK01        | buku              | komputer     |    5 |       3500 |
+|          3 | 2015-11-04 |       0 | crisjon sri        | TK01        | buku              | komputer     |   10 |       3500 |
+|          3 | 2015-11-04 |       0 | crisjon sri        | TV01        | lemari            | elektroniks  |    1 |    5040000 |
+|          5 | 2015-11-04 |       0 | geryy syap         | TK01        | buku              | komputer     |   10 |       3500 |
+|          6 | 2015-11-04 |       0 | Pandi sehat        | TK01        | buku              | komputer     |   20 |       3500 |
 +------------+------------+---------+--------------------+-------------+-------------------+--------------+------+------------+
 7 rows in set (0.012 sec)
 
@@ -58,16 +58,16 @@ MariaDB [dbpost_sib6]> SELECT * FROM pesanan_pelanggan_produk;
 +----+------------+---------+--------------------+------+-------------------+--------------+------+------------+
 | id | tanggal    | total   | nama               | kode | nama_produk       | jenis_produk | qty  | harga_jual |
 +----+------------+---------+--------------------+------+-------------------+--------------+------+------------+
-|  1 | 2015-11-04 | 9720000 | Agung Sedayu Group | C001 | Televisi 21 inchs | elektroniks  |    1 |   50500000 |
-|  1 | 2015-11-04 | 9720000 | Agung Sedayu Group | C001 | Kulkas 2 pintu    | elektroniks  |    1 |    4680000 |
-|  2 | 2015-11-04 |   17500 | Sekar Mirah        | C003 | Teh Kotak
+|  1 | 2015-11-04 | 9720000 | Aluca syaputra ha  | C001 | lemari            | elektroniks  |    1 |   50500000 |
+|  1 | 2015-11-04 | 9720000 | Aluca syaputra ha  | C001 | Kulkas 4 pintu    | elektroniks  |    1 |    4680000 |
+|  2 | 2015-11-04 |   17500 | fitri mirah        | C003 | buku
 | minuman      |    5 |       3500 |
-|  3 | 2015-11-04 |       0 | Gayatri Dwi        | C006 | Teh Kotak
+|  3 | 2015-11-04 |       0 | crisjon sri        | C006 | buku
 | minuman      |   10 |       3500 |
-|  3 | 2015-11-04 |       0 | Gayatri Dwi        | C006 | Televisi 21 inchs | elektroniks  |    1 |   50500000 |
-|  5 | 2015-11-04 |       0 | Cassanndra         | C010 | Teh Kotak
+|  3 | 2015-11-04 |       0 | crisjon sri        | C006 | lemari             | elektroniks  |    1 |   50500000 |
+|  5 | 2015-11-04 |       0 | gery syap          | C010 | buku
 | minuman      |   10 |       3500 |
-|  6 | 2015-11-04 |       0 | Pandan Wangi       | C002 | Teh Kotak
+|  6 | 2015-11-04 |       0 | pandi sehat        | C002 | buku
 | minuman      |   20 |       3500 |
 +----+------------+---------+--------------------+------+-------------------+--------------+------+------------+
 7 rows in set (0.002 sec)
@@ -97,23 +97,23 @@ MariaDB [dbpost_sib6]> SELECT * FROM produk;
 
              | jenis_produk_id |
 +----+--------+-------------------+------------+------------+------+----------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-|  1 | TV01   | Televisi 21 inchs |    3500000 |   50500000 |    5 |        2 |                        | NULL
+|  1 | TV01   | lemari         |    3500000 |   50500000 |    5 |        2 |                        | NULL
 
 
              |               1 |
-|  2 | TV02   | Televisi 40 inch  |    5500000 |    7440000 |    4 |        2 | NULL                   | NULL
+|  2 | TV02   | lemari 40      |    5500000 |    7440000 |    4 |        2 | NULL                   | NULL
 
 
              |               1 |
-|  3 | K001   | Kulkas 2 pintu    |    3500000 |    4680000 |    6 |        2 |                        | NULL
+|  3 | K001   | Kulkas 4 pintu    |    3500000 |    4680000 |    6 |        2 |                        | NULL
 
 
              |               1 |
-|  4 | M001   | Meja Makan        |     500000 |     600000 |    4 |        3 | NULL                   | NULL
+|  4 | M001   | Meja belajar        |     500000 |     600000 |    4 |        3 | NULL                   | NULL
 
 
              |               2 |
-|  5 | TK01   | Teh Kotak         |       3000 |       3500 |    6 |       10 | foto-5.png             | NULL
+|  5 | TK01   | buku           |       3000 |       3500 |    6 |       10 | foto-5.png             | NULL
 
 
              |               4 |
@@ -129,7 +129,7 @@ MariaDB [dbpost_sib6]> SELECT * FROM produk;
 
 
              |               5 |
-|  9 | LN01   | Notebook Lenovo   |    9000000 |   12480000 |    9 |        2 | NULL                   | NULL
+|  9 | LN01   | Notebook aceh    |    9000000 |   12480000 |    9 |        2 | NULL                   | NULL
 
 
              |               5 |
@@ -255,13 +255,13 @@ MariaDB [dbpost_sib6]> SELECT * FROM view_pesanan_detail;
 +------------+------------+---------+--------------------+-------------+-------------------+--------------+------+------------+
 | id_pesanan | tanggal    | total   | nama_pelanggan     | kode_produk | nama_produk       | jenis_produk | qty  | harga_jual |
 +------------+------------+---------+--------------------+-------------+-------------------+--------------+------+------------+
-|          1 | 2015-11-04 | 9720000 | Agung Sedayu Group | TV01        | Televisi 21 inchs | elektroniks  |    1 |    5040000 |
-|          1 | 2015-11-04 | 9720000 | Agung Sedayu Group | K001        | Kulkas 2 pintu    | makanan      |    1 |    4680000 |
-|          2 | 2015-11-04 |   17500 | Sekar Mirah        | TK01        | Teh Kotak         | komputer     |    5 |       3500 |
-|          3 | 2015-11-04 |       0 | Gayatri Dwi        | TK01        | Teh Kotak         | komputer     |   10 |       3500 |
-|          3 | 2015-11-04 |       0 | Gayatri Dwi        | TV01        | Televisi 21 inchs | elektroniks  |    1 |    5040000 |
-|          5 | 2015-11-04 |       0 | Cassanndra         | TK01        | Teh Kotak         | komputer     |   10 |       3500 |
-|          6 | 2015-11-04 |       0 | Pandan Wangi       | TK01        | Teh Kotak         | komputer     |   20 |       3500 |
+|          1 | 2015-11-04 | 9720000 | Aluca syaputra ha  | TV01        | lemari            | elektroniks  |    1 |    5040000 |
+|          1 | 2015-11-04 | 9720000 |  Aluca syaputra ha | K001        | Kulkas 4 pintu    | makanan      |    1 |    4680000 |
+|          2 | 2015-11-04 |   17500 | fitri Mirah        | TK01        | buku              | komputer     |    5 |       3500 |
+|          3 | 2015-11-04 |       0 |  crisjon sri       | TK01        | buku              | komputer     |   10 |       3500 |
+|          3 | 2015-11-04 |       0 | crisjon sri        | TV01        | lemari 1          | elektroniks  |    1 |    5040000 |
+|          5 | 2015-11-04 |       0 | gery syap          | TK01        | buku              | komputer     |   10 |       3500 |
+|          6 | 2015-11-04 |       0 | Pandi sehat        | TK01        | buku              | komputer     |   20 |       3500 |
 +------------+------------+---------+--------------------+-------------+-------------------+--------------+------+------------+
 7 rows in set (0.012 sec)
 
@@ -283,16 +283,16 @@ MariaDB [dbpost_sib6]> SELECT * FROM pesanan_pelanggan_produk;
 +----+------------+---------+--------------------+------+-------------------+--------------+------+------------+
 | id | tanggal    | total   | nama               | kode | nama_produk       | jenis_produk | qty  | harga_jual |
 +----+------------+---------+--------------------+------+-------------------+--------------+------+------------+
-|  1 | 2015-11-04 | 9720000 | Agung Sedayu Group | C001 | Televisi 21 inchs | elektroniks  |    1 |   50500000 |
-|  1 | 2015-11-04 | 9720000 | Agung Sedayu Group | C001 | Kulkas 2 pintu    | elektroniks  |    1 |    4680000 |
-|  2 | 2015-11-04 |   17500 | Sekar Mirah        | C003 | Teh Kotak
+|  1 | 2015-11-04 | 9720000 |  | C001 | Televisi 21 inchs | elektroniks  |    1 |   50500000 |
+|  1 | 2015-11-04 | 9720000 | Aluca syaputra ha  | C001 | Kulkas 4 pintu    | elektroniks  |    1 |    4680000 |
+|  2 | 2015-11-04 |   17500 | fitri Mirah        | C003 | buku
 | minuman      |    5 |       3500 |
-|  3 | 2015-11-04 |       0 | Gayatri Dwi        | C006 | Teh Kotak
+|  3 | 2015-11-04 |       0 | crisjon sri        | C006 | buku
 | minuman      |   10 |       3500 |
-|  3 | 2015-11-04 |       0 | Gayatri Dwi        | C006 | Televisi 21 inchs | elektroniks  |    1 |   50500000 |
-|  5 | 2015-11-04 |       0 | Cassanndra         | C010 | Teh Kotak
+|  3 | 2015-11-04 |       0 | crisjon sri        | C006 | Televisi 1 | elektroniks  |    1 |   50500000 |
+|  5 | 2015-11-04 |       0 | gery syap          | C010 | buku
 | minuman      |   10 |       3500 |
-|  6 | 2015-11-04 |       0 | Pandan Wangi       | C002 | Teh Kotak
+|  6 | 2015-11-04 |       0 | Pandi sehat       | C002 | buku
 | minuman      |   20 |       3500 |
 +----+------------+---------+--------------------+------+-------------------+--------------+------+------------+
 7 rows in set (0.002 sec)
@@ -322,23 +322,23 @@ MariaDB [dbpost_sib6]> SELECT * FROM produk;
 
              | jenis_produk_id |
 +----+--------+-------------------+------------+------------+------+----------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-|  1 | TV01   | Televisi 21 inchs |    3500000 |   50500000 |    5 |        2 |                        | NULL
+|  1 | TV01   | lemari 1  |    3500000 |   50500000 |    5 |        2 |                        | NULL
 
 
              |               1 |
-|  2 | TV02   | Televisi 40 inch  |    5500000 |    7440000 |    4 |        2 | NULL                   | NULL
+|  2 | TV02   | lemari 40   |    5500000 |    7440000 |    4 |        2 | NULL                   | NULL
 
 
              |               1 |
-|  3 | K001   | Kulkas 2 pintu    |    3500000 |    4680000 |    6 |        2 |                        | NULL
+|  3 | K001   | Kulkas 4 pintu    |    3500000 |    4680000 |    6 |        2 |                        | NULL
 
 
              |               1 |
-|  4 | M001   | Meja Makan        |     500000 |     600000 |    4 |        3 | NULL                   | NULL
+|  4 | M001   | Meja buku        |     500000 |     600000 |    4 |        3 | NULL                   | NULL
 
 
              |               2 |
-|  5 | TK01   | Teh Kotak         |       3000 |       3500 |    6 |       10 | foto-5.png             | NULL
+|  5 | TK01   | buku           |       3000 |       3500 |    6 |       10 | foto-5.png             | NULL
 
 
              |               4 |
@@ -346,7 +346,7 @@ MariaDB [dbpost_sib6]> SELECT * FROM produk;
 
 
              |               5 |
-|  7 | TB01   | Teh Botol         |       2000 |       2500 |   53 |       10 | foto-7.jpg             | NULL
+|  7 | TB01   | Teh cilup         |       2000 |       2500 |   53 |       10 | foto-7.jpg             | NULL
 
 
              |               4 |
@@ -387,15 +387,15 @@ MariaDB [dbpost_sib6]> SELECT * FROM produk;
 
 
              |               1 |
-| 24 | TV0120 | Televisi 27 inc   |    3500000 |   50500000 |    5 |        2 | NULL                   | NULL
+| 24 | TV0120 | Televisi 27    |    3500000 |   50500000 |    5 |        2 | NULL                   | NULL
 
 
              |               1 |
-| 25 | TV0121 | Televisi 28 inc   |    3500000 |   50500000 |    5 |        2 | NULL                   | NULL
+| 25 | TV0121 | Televisi 28   |    3500000 |   50500000 |    5 |        2 | NULL                   | NULL
 
 
              |               1 |
-| 26 | TV0122 | Televisi 29 inc   |    3500000 |   50500000 |    5 |        2 | NULL                   | NULL
+| 26 | TV0122 | Televisi 29    |    3500000 |   50500000 |    5 |        2 | NULL                   | NULL
 
 
              |               1 |
